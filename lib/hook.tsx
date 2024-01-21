@@ -1,9 +1,9 @@
 import { useActiveSection } from '@/context/activeSectionObserver';
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import type { sectionName } from './types';
 
-function hook(sectionName : sectionName, threshold = 0.75) {
+function useSectionInView(sectionName: sectionName, threshold = 0.75) {
   const { ref, inView } = useInView({
     threshold: threshold,
   });
@@ -12,11 +12,11 @@ function hook(sectionName : sectionName, threshold = 0.75) {
 
   useEffect(() => {
     if (inView && Date.now() - timeOfLastClick > 1000) {
-      setActiveSection(sectionName)
+      setActiveSection(sectionName);
     }
-  }, [inView, timeOfLastClick, sectionName])
+  }, [inView, timeOfLastClick, sectionName, setActiveSection]); // Include setActiveSection in the dependency array
 
-  return {ref}
+  return { ref };
 }
 
-export default hook
+export default useSectionInView;

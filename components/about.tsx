@@ -2,12 +2,10 @@
 import React, { useEffect } from 'react'
 import SectionHeading from './sectionHeading'
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { useActiveSection } from '@/context/activeSectionObserver'
-import hook from '@/lib/hook'
+import useSectionInView from '@/lib/hook'
 
 function About() {
-  const {ref} = hook("About")
+  const {ref} = useSectionInView("About")
 
   return (
     <motion.section ref={ref} id='about' className='mb-28 max-w-[45rem] leading-8 text-center sm:mb-40 scroll-mt-28' initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.175 }}>

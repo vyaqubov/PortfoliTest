@@ -3,13 +3,13 @@
 import React from 'react'
 import SectionHeading from './sectionHeading'
 import { motion } from 'framer-motion';
-import hook from '@/lib/hook';
 import { sendEmail } from '@/actions/sendEmail';
 import SubmitBtn from './submit-btn';
 import toast from 'react-hot-toast';
+import useSectionInView from '@/lib/hook';
 
 function Contact() {
-    const { ref } = hook("Contact");
+    const { ref } = useSectionInView("Contact");
 
     return (
         <motion.section ref={ref} id="contact" className='mb-20 sm:mb-28 w-[min(100%, 38rem)] scroll-mt-28' initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1 }} viewport={{ once: true }}>

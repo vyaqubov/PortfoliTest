@@ -7,12 +7,12 @@ import { BsArrowRight } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
-import hook from '@/lib/hook'
 import { useActiveSection } from '@/context/activeSectionObserver'
+import useSectionInView from '@/lib/hook'
 
 
 function Intro() {
-    const {ref} = hook("Home", 0.75);
+    const {ref} = useSectionInView("Home", 0.75);
     const {setActiveSection, setTimeOfLastClick}  = useActiveSection();
     return (
         <section ref={ref} id='home' className='mb-28 max-w-[50rem] text-center sm:mb-0 mx-auto scroll-mt-[100rem]'>
@@ -35,9 +35,9 @@ function Intro() {
                     </motion.span>
                 </div>
                 <motion.p className='mb-10 px-4 text-2xl font-medium leading-[1.5]' initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }}>
-                    <span className='font-bold'>Lorem, ipsum dolor sit amet.</span> I'm a{" "}
-                    <span className='font-bold'>Lorem, ipsum dolor sit amet.</span> I'm a{" "}
-                    <span className='font-bold'>Lorem, ipsum dolor sit amet.</span> I'm a{" "}
+                    <span className='font-bold'>Lorem, ipsum dolor sit amet.</span> I&apos;m a{" "}
+                    <span className='font-bold'>Lorem, ipsum dolor sit amet.</span> I&apos;m a{" "}
+                    <span className='font-bold'>Lorem, ipsum dolor sit amet.</span> I&apos;m a{" "}
                 </motion.p>
                 <motion.div className='flex flex-col sm:flex-row items-center justify-center gap-3 px-4 text-lg font-medium'
                     initial={{ opacity: 0, y: 100 }}

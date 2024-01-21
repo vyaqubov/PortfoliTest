@@ -3,12 +3,12 @@ import React from 'react';
 import SectionHeading from './sectionHeading';
 import 'react-vertical-timeline-component/style.min.css';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import hook from '@/lib/hook';
 import { experiencesData } from '@/lib/data';
 import { useThemeFunc } from '@/context/themecontext';
+import useSectionInView from '@/lib/hook';
 
 function Experience() {
-  const { ref } = hook("Experience", 0.5);
+  const { ref } = useSectionInView("Experience", 0.5);
   const { theme } = useThemeFunc();
 
   return (

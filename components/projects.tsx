@@ -4,10 +4,10 @@ import React from 'react';
 import SectionHeading from './sectionHeading';
 import { projectsData } from '@/lib/data';
 import ProjectItem from './project'
-import hook from '@/lib/hook';
+import useSectionInView from '@/lib/hook';
 
 function Projects() {
-    const {ref} = hook("Projects", 0.5);
+    const {ref} = useSectionInView("Projects", 0.5);
 
     return (
         <section ref={ref} id='projects' className='scroll-mt-28 mb-28'>

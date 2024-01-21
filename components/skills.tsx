@@ -1,11 +1,11 @@
 import React from 'react';
 import SectionHeading from './sectionHeading';
 import { fadeAnimationVariants, skillsData } from '@/lib/data';
-import hook from '@/lib/hook';
 import { animate, motion } from 'framer-motion';
+import useSectionInView from '@/lib/hook';
 
 function Skills() {
-  const {ref} = hook("Skills")
+  const {ref} = useSectionInView("Skills")
   return (
     <section ref={ref} id='skills' className='mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40'>
         <SectionHeading>Skills</SectionHeading>
